@@ -1,11 +1,11 @@
 
 def binary_search(nums: list[int], target: int) -> int:
 
-    low = nums[0]
-    high = nums[len(nums)-1]
-    if low == target:
+    low = 0
+    high = len(nums)-1
+    if nums[low] == target:
         return low
-    elif high == target:
+    elif nums[high] == target:
         return high
     else:
         while (low <= high):
@@ -26,16 +26,22 @@ def binary_search(nums: list[int], target: int) -> int:
     middle = (left + right)//2
     print('middle: ', middle)
 
-    if target == nums[middle]:
+    if target == nums[left]:
+        return left
+
+    elif target == nums[right]:
+        return right
+
+    elif target == nums[middle]:
         return middle
 
-    if target < nums[middle]:
+    elif target < nums[middle]:
         print('less')
-        return binary_search(nums[:middle], target)
-
-    if target > nums[middle]:
-        print('more')
         return binary_search(nums[middle + 1:], target)
+
+    elif target > nums[middle]:
+        print('more')
+        return binary_search(nums[:middle], target)
 
     return -1
 
