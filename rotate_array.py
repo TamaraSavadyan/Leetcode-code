@@ -4,7 +4,7 @@ def rotate(nums, k):
     :type k: int
     :rtype: None Do not return anything, modify nums in-place instead.
     """
-    
+    k = k % len(nums)  
     return nums[-k:] + nums[:-k]
     # nums.pop(k)
     # for _ in range(k):

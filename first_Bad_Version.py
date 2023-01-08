@@ -44,6 +44,7 @@ class Solution:
             end = mid-1
          else:
             start = mid+1
+
 ob1 = Solution()
 first_bad = 1
 op = ob1.firstBadVersion(2)
