@@ -14,7 +14,7 @@ def searchInsert(nums, target):
     else:
         while (low <= high):
             mid = (low+high)//2
-            print(mid)
+
             if nums[mid] == target:
                 
                 return mid
